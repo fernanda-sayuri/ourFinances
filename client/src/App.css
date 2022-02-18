@@ -1,0 +1,24 @@
+.appContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.registerContainer{
+  padding: 10px 20px;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.registerTitle{
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: monospace;
+}
+.registerInput{
+  display: block;
+  padding: 7px 0;
+  margin: 10px auto;
+}
+.registerButton{
+  padding: 2px 5px;
+}
