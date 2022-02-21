@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Axios from "axios";
 
 function App() {
   const [values, setValues] = useState();
@@ -12,9 +13,18 @@ function App() {
     }));
   };
 
-  //função de evento do click do botão
+  //função de evento do click do botão Cadastrar
   const handleClickButton = () => {
     console.log(values);
+
+    //endpoint, objeto que vamos enviar (payload)
+    Axios.post("http://localhost:3001/register", {
+      name: values.name,
+      cost: values.cost,
+      category: values.category
+    }).then((response) => {
+      console.log(response);
+    })
   };
 
   return (
