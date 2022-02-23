@@ -32,9 +32,24 @@ app.post('/register', (req, res) => {
     const { cost } = req.body;
     const { category } = req.body;
 
-    console.log(name);
-})
+    //console.log(name); //mostra no terminal
+
+    let SQL = "INSERT INTO games (name, cost, category) VALUES (?, ?, ?)";
+
+    db.query(SQL, [name, cost, category], (err, result) => {
+        console.log(err);
+    });
+});
+
+app.get("/getCards", (req, res) => {
+    let SQL = "SELECT * from games";
+
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else res.send(result);
+    })
+});
 
 app.listen(3001, () => {
-    console.log('rodando servidor')
-})
+    console.log('rodando servidor');
+});
